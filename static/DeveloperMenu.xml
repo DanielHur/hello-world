@@ -9,4 +9,10 @@
       <ObjDesc>Clientes</ObjDesc>
       <ObjLink>http://localhost:8080/TesisMaestriaJavaEnvironment/servlet/com.tesismaestria.clientes</ObjLink>
    </Object>
+   <Object>
+      <ObjCls>13</ObjCls>
+      <ObjName>ControlSeguridad</ObjName>
+      <ObjDesc>Control Seguridad</ObjDesc>
+      <ObjLink>http://localhost:8080/TesisMaestriaJavaEnvironment/servlet/com.tesismaestria.controlseguridad</ObjLink>
+   </Object>
 </Objects>
