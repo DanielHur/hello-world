@@ -1,0 +1,5 @@
+<Context reloadable="true" privileged="true">
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <Resources cachingAllowed="false" />
+    <JarScanner><JarScanFilter pluggabilitySkip="*" tldSkip="*" pluggabilityScan="GXWebSocket.jar"/></JarScanner>
+</Context>

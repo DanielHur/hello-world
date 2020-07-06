@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="false">
+  
+	<display-name>Genexus Web App</display-name>
+
+                <listener>
+                        <listener-class>com.genexus.webpanels.ServletEventListener</listener-class>
+                </listener>
+			
+			<listener>
+				<listener-class>com.genexus.webpanels.SessionEventListener</listener-class>
+			</listener>			
+    						
+    						<servlet>
+    								<servlet-name>GXObjectUploadServices</servlet-name>
+            				<servlet-class>com.genexus.webpanels.GXObjectUploadServices</servlet-class>            				
+    						</servlet>
+    						
+    						<servlet>
+    								<servlet-name>GXOAuthAccessToken</servlet-name>
+            				<servlet-class>com.genexus.webpanels.GXOAuthAccessTokenDummy</servlet-class>            				
+    						</servlet>
+						
+    						<servlet>
+    								<servlet-name>GXOAuthLogout</servlet-name>
+            				<servlet-class>com.genexus.webpanels.GXOAuthLogoutDummy</servlet-class>            				
+    						</servlet>
+    						<servlet>
+    								<servlet-name>GXOAuthUserInfo</servlet-name>
+            				<servlet-class>com.genexus.webpanels.GXOAuthUserInfoDummy</servlet-class>            				
+    						</servlet>    						
+    						<servlet>
+    								<servlet-name>GXValidService</servlet-name>
+            				<servlet-class>com.genexus.webpanels.GXValidService</servlet-class>            				
+    						</servlet>    						
+							
+						<servlet>
+							<servlet-name>GXResourceProvider</servlet-name>
+							<servlet-class>com.genexus.webpanels.GXResourceProvider</servlet-class>
+						</servlet>
+							<servlet>
+							<servlet-name>GAMOAuthSignIn</servlet-name>
+							<servlet-class>com.genexus.webpanels.agamextauthinputDummy</servlet-class>                                                                        
+							</servlet>
+							<servlet>
+							<servlet-name>GAMOAuthCallback</servlet-name>
+							<servlet-class>com.genexus.webpanels.agamextauthinputDummy</servlet-class>                                                                         
+							</servlet> 
+							<servlet>
+							<servlet-name>GAMOAuthAccessToken</servlet-name>
+							<servlet-class>com.genexus.webpanels.agamoauth20getaccesstokenDummy</servlet-class>                                                                         
+							</servlet>
+							<servlet>
+							<servlet-name>GAMOAuthUserInfo</servlet-name>
+							<servlet-class>com.genexus.webpanels.agamoauth20getuserinfoDummy</servlet-class>                                                                         
+							</servlet>
+							<servlet>
+							<servlet-name>GAMOAuthSignOut</servlet-name>
+							<servlet-class>com.genexus.webpanels.agamextauthinputDummy</servlet-class>                                                                         
+							</servlet>
+							<servlet>
+							<servlet-name>GXVer</servlet-name>
+							<servlet-class>com.genexus.webpanels.gxver</servlet-class>                                                                         
+							</servlet>					
+						
+    						<servlet-mapping>
+           							<servlet-name>GXObjectUploadServices</servlet-name>
+        								<url-pattern>/gxobject</url-pattern>
+    						</servlet-mapping>
+    						
+    						<servlet-mapping>
+           							<servlet-name>GXOAuthAccessToken</servlet-name>
+        								<url-pattern>/oauth/access_token</url-pattern>
+    						</servlet-mapping>    						
+    						<servlet-mapping>
+           							<servlet-name>GXOAuthLogout</servlet-name>
+        								<url-pattern>/oauth/logout</url-pattern>
+    						</servlet-mapping>    						
+    						
+    						<servlet-mapping>
+           							<servlet-name>GXOAuthUserInfo</servlet-name>
+        								<url-pattern>/oauth/userinfo</url-pattern>
+    						</servlet-mapping>    						
+						
+    						<servlet-mapping>
+           							<servlet-name>GXValidService</servlet-name>
+        								<url-pattern>/gx_valid_service</url-pattern>
+    						</servlet-mapping>
+						<servlet-mapping>
+								<servlet-name>GXResourceProvider</servlet-name>
+								<url-pattern>/servlet/com.genexus.webpanels.GXResourceProvider</url-pattern>
+    						</servlet-mapping>    						    						  					
+							<servlet-mapping>
+							<servlet-name>GAMOAuthSignIn</servlet-name>
+							<url-pattern>/oauth/gam/signin</url-pattern>
+							</servlet-mapping>
+							<servlet-mapping>
+							<servlet-name>GAMOAuthCallback</servlet-name>
+							<url-pattern>/oauth/gam/callback</url-pattern>
+							</servlet-mapping>
+							<servlet-mapping>
+							<servlet-name>GAMOAuthAccessToken</servlet-name>
+							<url-pattern>/oauth/gam/access_token</url-pattern>
+							</servlet-mapping>
+							<servlet-mapping>
+							<servlet-name>GAMOAuthUserInfo</servlet-name>
+							<url-pattern>/oauth/gam/userinfo</url-pattern>
+							</servlet-mapping>
+							<servlet-mapping>
+							<servlet-name>GAMOAuthSignOut</servlet-name>
+							<url-pattern>/oauth/gam/signout</url-pattern>
+							</servlet-mapping>
+
+							<servlet-mapping>
+							<servlet-name>GXVer</servlet-name>
+							<url-pattern>/servlet/com.genexus.webpanels.gxver</url-pattern>
+							</servlet-mapping>
+                
+								<context-param>
+    							<param-name>gxcfg</param-name>
+    							<param-value>com.tesismaestria.GXcfg</param-value>								
+								</context-param>  
+
+					<filter>
+					 <filter-name>ExpiresFilter</filter-name>
+					 <filter-class>com.genexus.filters.ExpiresFilter</filter-class>
+					 <init-param>
+						<param-name>ExpiresByType image</param-name>
+						<param-value>access plus 36 hours</param-value>
+					 </init-param>
+					 <init-param>
+						<param-name>ExpiresByType text/css</param-name>
+						<param-value>access plus 36 hours</param-value>
+					 </init-param>
+					 <init-param>
+						<param-name>ExpiresByType application/javascript</param-name>
+						<param-value>access plus 36 hours</param-value>
+					 </init-param>
+				</filter>
+				<filter-mapping>
+					<filter-name>ExpiresFilter</filter-name>
+					<url-pattern>/*</url-pattern>
+					<dispatcher>REQUEST</dispatcher>
+				</filter-mapping>						
+</web-app>
