@@ -3,4 +3,10 @@
 <Objects>
    <Charset>UTF-8</Charset>
    <Path>file:///C:/Program Files (x86)/GeneXus/GeneXus15/</Path>
+   <Object>
+      <ObjCls>0</ObjCls>
+      <ObjName>Clientes</ObjName>
+      <ObjDesc>Clientes</ObjDesc>
+      <ObjLink>http://localhost:8080/TesisMaestriaJavaEnvironment/servlet/com.tesismaestria.clientes</ObjLink>
+   </Object>
 </Objects>
