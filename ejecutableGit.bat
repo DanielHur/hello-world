@@ -1,6 +1,6 @@
 @echo
-CD C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\TesisMaestriaJavaEnvironment
+CD C:\Users\katherine\Documents\TesisMaestriaJavaEnvironment
 git add -A
-git commit -m "subido desde genexus 2"
+git commit -m "subido desde genexus 3"
 git push -u origin master
 
